@@ -2,8 +2,8 @@
 * Blam Python
 --------------------------------------------------------------------
                             ===  BLAM PYTHON !  ===
-> [DOCS]    Search http://docs.python.org/search.html  http://www.python.org/doc/ 
-[SCRIPT]  #!/usr/bin/env python     
+ [DOCS]    Search http://docs.python.org/search.html  http://www.python.org/doc/ 
+ [SCRIPT]  #!/usr/bin/env python     
    import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
    os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
    import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
