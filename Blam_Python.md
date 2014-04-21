@@ -22,6 +22,8 @@
         def __init__(self,x): pass
       c = C(); c.method.im_func.whoami='my name is c'
       try: \\ body \\except IOError, msg: pass \\ except: general \\ finally: noerr
+      LAMBDA \\ global='g' \\ def foo(list): \\ lexical='loc' \\ map(lambda arg,lexical=lexical: arg+lexical+global, list)
+
     [VARS/OPS] x=y=1;  x,y="parallel",'assign'   my(x)=(3);   Operator precedence:
       lambda or and not  [in, not in]  [is, is not]  [<, <=, >, >=, <>, !=, ==]
       | ^ &  [<<, >>]  [+, -]  [*, /, %]  [+x, -x]  ~x ** x.attr x[index]
@@ -222,11 +224,6 @@
 
         
 
-LAMBDA
-global='g'
-def foo(list):
-   lexical='loc'
-   map(lambda arg,lexical=lexical: arg+lexical+global, list)
 
 
     #!/usr/local/bin/python
