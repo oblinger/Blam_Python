@@ -4,24 +4,24 @@
                             ===  BLAM PYTHON !  ===
     [DOCS]    Search http://docs.python.org/search.html  http://www.python.org/doc/ 
     [SCRIPT]  #!/usr/bin/env python     
-    import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
-    os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
-    import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
-    os.execlp("emacs", "emacs", "file.txt")
-    user_time,sys,child_user,child_sys,elapsed = os.times()
-    os.urandom(n)
-[CONTROL] 
-   while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
-   if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
-   for ele in list: print ele   for i in range(1, 10): print i
-   { 'case1': 'val1', 'case2':'val2' }.get(switch_index, 'default_val')
-   apply( lambda x,y:x+y , (2,3) )
-   def square(x, root=false): return x*x    #Comment '\\' means indented on next line
-   def proc(a, b=7, ): \\  \\ global gname \\ my (loc_name)=(1) \\ body
-   class C: \\  def method_name(self): \\  self.inst_var=5
-     def __init__(self,x): pass
-   c = C(); c.method.im_func.whoami='my name is c'
-   try: \\ body \\except IOError, msg: pass \\ except: general \\ finally: noerr
+      import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
+      os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
+      import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
+      os.execlp("emacs", "emacs", "file.txt")
+      user_time,sys,child_user,child_sys,elapsed = os.times()
+      os.urandom(n)
+    [CONTROL] 
+      while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
+      if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
+      for ele in list: print ele   for i in range(1, 10): print i
+      { 'case1': 'val1', 'case2':'val2' }.get(switch_index, 'default_val')
+      apply( lambda x,y:x+y , (2,3) )
+      def square(x, root=false): return x*x    #Comment '\\' means indented on next line
+      def proc(a, b=7, ): \\  \\ global gname \\ my (loc_name)=(1) \\ body
+      class C: \\  def method_name(self): \\  self.inst_var=5
+        def __init__(self,x): pass
+      c = C(); c.method.im_func.whoami='my name is c'
+      try: \\ body \\except IOError, msg: pass \\ except: general \\ finally: noerr
 [VARS/OPS] x=y=1;  x,y="parallel",'assign'   my(x)=(3);   Operator precedence:
    lambda or and not  [in, not in]  [is, is not]  [<, <=, >, >=, <>, !=, ==]
    | ^ &  [<<, >>]  [+, -]  [*, /, %]  [+x, -x]  ~x ** x.attr x[index]
