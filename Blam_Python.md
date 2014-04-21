@@ -1,6 +1,4 @@
 
-* Blam Python
---------------------------------------------------------------------
                             ===  BLAM PYTHON!  ===
     [DOCS]    Search [Search](http://docs.python.org/search.html)  [PyDocs](http://www.python.org/doc/)
     [SCRIPT]  #!/usr/bin/env python     
@@ -220,7 +218,7 @@
 -----------------
 
 
-
+    # Verbose Documentation By Example
     #!/usr/local/bin/python
     #########################################################################
     #                                                                       #
