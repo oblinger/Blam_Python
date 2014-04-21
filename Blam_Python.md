@@ -2,14 +2,14 @@
 * Blam Python
 --------------------------------------------------------------------
                             ===  BLAM PYTHON !  ===
- [DOCS]    Search http://docs.python.org/search.html  http://www.python.org/doc/ 
- [SCRIPT]  #!/usr/bin/env python     
-   import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
-   os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
-   import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
-   os.execlp("emacs", "emacs", "file.txt")
-   user_time,sys,child_user,child_sys,elapsed = os.times()
-   os.urandom(n)
+    [DOCS]    Search http://docs.python.org/search.html  http://www.python.org/doc/ 
+    [SCRIPT]  #!/usr/bin/env python     
+    import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
+    os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
+    import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
+    os.execlp("emacs", "emacs", "file.txt")
+    user_time,sys,child_user,child_sys,elapsed = os.times()
+    os.urandom(n)
 [CONTROL] 
    while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
    if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
