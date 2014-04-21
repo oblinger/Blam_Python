@@ -135,93 +135,83 @@
      STANDARD:  \a  \b  \f  \n  \r  \t  \v  \x  \\
     [SPECIAL]
      __dict__  dir() __class__ __bases__  
-    [TOOLS] compileFile(source) ? help inspect pydoc
+    [TOOLS/DEBUG/HELP]
+     compileFile(source) ? help inspect pydoc
      .dir(x)
+     lookfor(what[, module, import_modules, ...])  Do a keyword search on docstrings.
+     Reading help
+     info([object, maxwidth, output, toplevel])  Get help information for a function, class, or module.
+     source(object[, output])  Print or write to a file the source code for a Numpy object.
 
 
-[SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o) s|o==s.union(o)
-            s&o==s.insersection(o) s-o==s.difference(o) s^o==s.symmetric_difference(o)
-            .update(o)  .intersection_update(o) .difference_update(o) .symmetric_difference_update(o)
-            .add(e) .remove(e) .discard(e) .pop() .clear()
-
-[MORE FILE]   .seek(offset[,os.SEEK_CUR]) .tell()  .fileno() .isatty()      .truncate([sz])   .closed .encoding .errors .mode .name .newlines .softspace
-[MEMORY VIEW, CONTEXT MANAGER TYPE, ]
-
-[CSV]
-import csv
->>> with open('eggs.csv', 'rb') as csvfile:
-...     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-...     for row in spamreader:
-...         print ', '.join(row)
-import csv
-with open('eggs.csv', 'wb') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=' ',
-                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
-    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
-    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
-#SNIFFER
-with open('example.csv', 'rb') as csvfile:
-    dialect = csv.Sniffer().sniff(csvfile.read(1024))
-    csvfile.seek(0)
-    reader = csv.reader(csvfile, dialect)
-    # ... process CSV file contents here ...
-
-csv.list_dialects()
+    --- Work in Progress ---
 
 
+    [SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o) 
+                s|o==s.union(o) s&o==s.insersection(o) s-o==s.difference(o) s^o==s.symmetric_difference(o)
+                .update(o)  .intersection_update(o) .difference_update(o) .symmetric_difference_update(o)
+                .add(e) .remove(e) .discard(e) .pop() .clear()
 
+    [MORE FILE]   .seek(offset[,os.SEEK_CUR]) .tell()  .fileno() .isatty()      .truncate([sz])   .closed .encoding .errors .mode .name .newlines .softspace
+    [MEMORY VIEW, CONTEXT MANAGER TYPE, ]
+    [CSV]
+     import csv
+     >>> with open('eggs.csv', 'rb') as csvfile:
+     ...     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+     ...     for row in spamreader:
+     ...         print ', '.join(row)
+     import csv
+     with open('eggs.csv', 'wb') as csvfile:
+         spamwriter = csv.writer(csvfile, delimiter=' ',
+                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
+         spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
+         spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+     #SNIFFER
+     with open('example.csv', 'rb') as csvfile:
+     dialect = csv.Sniffer().sniff(csvfile.read(1024))
+     csvfile.seek(0)
+     reader = csv.reader(csvfile, dialect)
+     # ... process CSV file contents here ...
 
-* Py Docs
-- Py Tutorial          http://docs.python.org/3/tutorial/modules.html
-- Py for data science  https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience
-- Tut for NLP words    http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb
-
-- Quick Ref http://rgruet.free.fr/PQR25/PQR2.5.html  (import into blam)
-
-https://zapier.com/engineering/debugging-python-boss/
-
-
-EXAMPLES
-- Flask  https://github.com/mitsuhiko/flask/blob/master/flask/blueprints.py
-- ?Praw https://github.com/praw-dev/praw/blob/master/praw/helpers.py
-- ?Pyrimid  https://github.com/Pylons/pyramid/blob/master/pyramid/authentication.py
-
-
-TO LOOK AT WHEN STUDYING
-- http://climateecology.wordpress.com/2014/02/10/a-side-by-side-example-of-r-and-python/
-http://blog.scrapinghub.com/2014/03/26/optimizing-memory-usage-of-scikit-learn-models-using-succinct-tries/
-http://www.datasciencecentral.com/profiles/blogs/sample-data-science-project-optimizing-all-business-levers-simult
+     csv.list_dialects()
 
 
 
-** Python usage
-- As Sci Stack  http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/
-- Building ML stack on Vagrant    http://jeroenjanssens.com/2013/12/07/lean-mean-data-science-machine.html
+    === PYTHON DOCUMENTATION ===
+     - Py Tutorial          http://docs.python.org/3/tutorial/modules.html
+     - Py for data science  https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience
+     - Tut for NLP words    http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb
+     - Quick Ref http://rgruet.free.fr/PQR25/PQR2.5.html  (import into blam)
+     https://zapier.com/engineering/debugging-python-boss/
 
 
-** Doc Topics
+    [EXAMPLES]
+     - Flask  https://github.com/mitsuhiko/flask/blob/master/flask/blueprints.py
+     - ?Praw https://github.com/praw-dev/praw/blob/master/praw/helpers.py
+     - ?Pyrimid  https://github.com/Pylons/pyramid/blob/master/pyramid/authentication.py
 
-*** Python speed
--  http://code-redefined.blogspot.com/2011/03/cython-made-my-python-code-go.html
+
+    [TO LOOK AT WHEN STUDYING]
+     - http://climateecology.wordpress.com/2014/02/10/a-side-by-side-example-of-r-and-python/
+     - http://blog.scrapinghub.com/2014/03/26/optimizing-memory-usage-of-scikit-learn-models-using-succinct-tries/
+     - http://www.datasciencecentral.com/profiles/blogs/sample-data-science-project-optimizing-all-business-levers-simult
+
+    [Python usage]
+     - As Sci Stack  http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/
+     - Building ML stack on Vagrant    http://jeroenjanssens.com/2013/12/07/lean-mean-data-science-machine.html
+
+    [Python speed]
+     -  http://code-redefined.blogspot.com/2011/03/cython-made-my-python-code-go.html
 
 
+    === LIB NUMPY AND FRIENDS ===
 
-* Lib NumPy
+    [NUM PY]
+     import numpy as np
+     np.bool, np.float32
 
-** Blam NumPy
-
-import numpy as np
-np.bool, np.float32
-
-IN PLACE
- y[:] = 2*y
-
-** Help
-
-lookfor(what[, module, import_modules, ...])	Do a keyword search on docstrings.
-Reading help
-info([object, maxwidth, output, toplevel])	Get help information for a function, class, or module.
-source(object[, output])	Print or write to a file the source code for a Numpy object.
+    [IN PLACE]
+     y[:] = 2*y
 
 
 * Lib SciPy
@@ -237,6 +227,7 @@ global='g'
 def foo(list):
    lexical='loc'
    map(lambda arg,lexical=lexical: arg+lexical+global, list)
+
 
     #!/usr/local/bin/python
     #########################################################################
