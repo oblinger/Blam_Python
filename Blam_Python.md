@@ -14,7 +14,7 @@
       for ele in list: print ele   for i in range(1, 10): print i
       { 'case1': 'val1', 'case2':'val2' }.get(switch_index, 'default_val')
       apply( lambda x,y:x+y , (2,3) )
-      def square(x, root=false): return x*x    #Comment '\\' means indented on next line
+      def square(x, root=false): return x*x  \\ square(x,True)
       def proc(a, b=7, ): \\  \\ global gname \\ my (loc_name)=(1) \\ body
       class C: \\  def method_name(self): \\  self.inst_var=5
         def __init__(self,x): pass
@@ -52,29 +52,29 @@
       seq<--   .keys() .items()  
       itr<--   iter(d)  .iteritems()  .iterkeys()  .itervalues()
     [STRING]. len("a"+"b")  str(99.99)
-     x,y,z,r = "to", 'to', `2`, r"\raw\str"       """multi-line doc string"""
-     "format Str %s %c %i %d %e %f %%  \r\n \t \xFF \u00FF" % ('aa', 'a', 7, Decimal(7) 7.1, 7.1e+00)
-     "%r %s  %-i %0i" % ('repr', 'str', left_adjusted, zero_padded,  )
-     print '{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x)
-     if ch in str: pass; if str.find('sub')!=-1:  ch==ord(chr(ch))
-     bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])   
-              .isalnum()  .isalpha() .isdigit() .islower()  .isspace()  .istitle()  .isupper() 
-     int<--   len(s)  .index(sub[,start[,end]]) .count(sub[,start[,end]])   .find(sub[,start[,end]])    .rindex   .rfind
-     str<--   s[:-2]  .format(arg1,...)
-     MODIFY   s[1:3]=="ra"  .replace(old,new[,maxsplit])  .swapcase() 
-     seq<--   .strip("stripchars") .lstrip  .rstrip .splitlines([keepends])
-     PAD      .ljust(width) .rjust(width)   .lstrip()  .center(width)  .expandtabs([tabsize])  .zfill(w)
-     CASE     .lower()  .upper()  .capitalize() .title() 
-     OTHER    .decode([enc[,err]])  .encode([enc[,err]])  .translate(table[,delchs])
+      x,y,z,r = "to", 'to', `2`, r"\raw\str"       """multi-line doc string"""
+      "format Str %s %c %i %d %e %f %%  \r\n \t \xFF \u00FF" % ('aa', 'a', 7, Decimal(7) 7.1, 7.1e+00)
+      "%r %s  %-i %0i" % ('repr', 'str', left_adjusted, zero_padded,  )
+      print '{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x)
+      if ch in str: pass; if str.find('sub')!=-1:  ch==ord(chr(ch))
+      bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])   
+               .isalnum()  .isalpha() .isdigit() .islower()  .isspace()  .istitle()  .isupper() 
+      int<--   len(s)  .index(sub[,start[,end]]) .count(sub[,start[,end]])   .find(sub[,start[,end]])    .rindex   .rfind
+      str<--   s[:-2]  .format(arg1,...)
+      MODIFY   s[1:3]=="ra"  .replace(old,new[,maxsplit])  .swapcase() 
+      seq<--   .strip("stripchars") .lstrip  .rstrip .splitlines([keepends])
+      PAD      .ljust(width) .rjust(width)   .lstrip()  .center(width)  .expandtabs([tabsize])  .zfill(w)
+      CASE     .lower()  .upper()  .capitalize() .title() 
+      OTHER    .decode([enc[,err]])  .encode([enc[,err]])  .translate(table[,delchs])
               (before,sep,after)=s.partition(sep)  .rpartition
     [IO]
-     print "%i %f5.2 %s8 %s" % (1, 1.2, 'str', int( raw_input('prompt> ') ) ), end=''
-     sys.stdout.write('prompt> ')   sys.stdout.flush()
-     o=open('out.txt','w+');   # r=read w=write a=append b=binary +=andUpdate
-     o.write("xx"); o.writelines(lst); o.close();  
-     inp=open('in','r'); while line=inp.readline():
-     for each in o.readlines():  y=each     # iterate through the file
-     open(fname[,mode[,bufsize]])    sys.stdout.write("no carriage return")
+      print "%i %f5.2 %s8 %s" % (1, 1.2, 'str', int( raw_input('prompt> ') ) ), end=''
+      sys.stdout.write('prompt> ')   sys.stdout.flush()
+      o=open('out.txt','w+');   # r=read w=write a=append b=binary +=andUpdate
+      o.write("xx"); o.writelines(lst); o.close();  
+      inp=open('in','r'); while line=inp.readline():
+      for each in o.readlines():  y=each     # iterate through the file
+      open(fname[,mode[,bufsize]])    sys.stdout.write("no carriage return")
      tmpfile()
      user=raw_input();  lines = sys.stdin.readlines();  
      import os    # import the os module first
@@ -93,23 +93,6 @@
      os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) 
             .isfile(f) .isdir(f) .split(f) .splitdrive(f) .splitext(f)
      os.popen(command,mode,bufSize) os.tmpfile() os.stat(f)
-    [MODULES] import module;  from module import class, function, variable
-     from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str) 
-     import linecache;       linecache.getline(filename, lineno) 
-     import copy;            copy.copy(x) copy.deepcopy(x)
-     import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
-     from random import *;   randrange(0,8,2) --> 0,2,4, or 6
-     from datetime import datetime;    str(datetime.fromtimestamp(time));  str(datetime.datetime.utcnow())
-     import dateutil.parser; yourdate = dateutil.parser.parse(datestring)
-    [CLASS/FN]
-     def fn(*args, **kwmap):
-     class ClassName(SuperClass): 
-       classVar=1
-       def __inst__(self):
-       self.instVar=2
-       def method(self, arg1): pass
-     isinstance(Decimal(4), Decimal)
-     .__dict__  .__class  .__bases__ .__name__ .__mro__ .mro() .__subclasses__()
     [SYSTEM]
      time.sleep(5)  os.spawnlp(os.P_NOWAIT, path, ARG0, arg1, ...)
      os.exec(...) l=listargs, v=argv, e=env@end, p=searchPath, exec=do not return
@@ -142,6 +125,28 @@
      Reading help
      info([object, maxwidth, output, toplevel])  Get help information for a function, class, or module.
      source(object[, output])  Print or write to a file the source code for a Numpy object.
+
+    [MODULES] import module;  from module import class, function, variable
+     from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str) 
+     import linecache;       linecache.getline(filename, lineno) 
+     import copy;            copy.copy(x) copy.deepcopy(x)
+     import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
+     from random import *;   randrange(0,8,2) --> 0,2,4, or 6
+     from datetime import datetime;    str(datetime.fromtimestamp(time));  str(datetime.datetime.utcnow())
+     import dateutil.parser; yourdate = dateutil.parser.parse(datestring)
+
+    [CLASS/FN]
+     def fn(*args, **kwmap):
+     class ClassName(SuperClass): 
+       classVar=1
+       @classmethod
+       def my_c_method(cls, arg1, ...): 
+           new_inst = cls()
+       ClassName.my_c_method(1)
+       def __inst__(self): \\  self.instVar=2
+       def method(self, arg1): pass
+     isinstance(Decimal(4), Decimal)
+     .__dict__  .__class  .__bases__ .__name__ .__mro__ .mro() .__subclasses__()
 
 
     --- Work in Progress ---
