@@ -1,5 +1,6 @@
+# BLAM PYTHON!
 
-                            ===  BLAM PYTHON!  ===
+```python
     [DOCS]   Search [Search](http://docs.python.org/search.html)  [PyDocs](http://www.python.org/doc/)
     [SCRIPT]  #!/usr/bin/env python     
       import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
@@ -217,7 +218,7 @@
 
     [IN PLACE]
      y[:] = 2*y
-
+```
 
 
 -----------------
