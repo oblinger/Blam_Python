@@ -9,7 +9,7 @@
   os.execlp("emacs", "emacs", "file.txt")
   user_time,sys,child_user,child_sys,elapsed = os.times()
   os.urandom(n)
-[CONTROL] 
+[CONTROL] x=y=1;  x,y="parallel",'assign' 
   while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
   if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
   for ele in list: print ele   for i in range(1, 10): print i
@@ -23,7 +23,7 @@
   try: \\ body \\except IOError, msg: pass \\ except: general \\ finally: noerr
   LAMBDA \\ global='g' \\ def foo(list): \\ lexical='loc' \\ map(lambda arg,lexical=lexical: arg+lexical+global, list)
 
-[VARS/OPS] x=y=1;  x,y="parallel",'assign'   my(x)=(3);   Operator precedence:
+[VARS/OPS]   Operator precedence:
   lambda or and not  [in, not in]  [is, is not]  [<, <=, >, >=, <>, !=, ==]
   | ^ &  [<<, >>]  [+, -]  [*, /, %]  [+x, -x]  ~x ** x.attr x[index]
   x[y:z] f(arg...) (expr...) [exprs...] {key:val...} `expr...`
@@ -142,6 +142,7 @@
    classVar=1
    @classmethod
    def my_c_method(cls, arg1, ...): 
+       my(x)=(3);   
        new_inst = cls()
    ClassName.my_c_method(1)
    def __inst__(self): \\  self.instVar=2
