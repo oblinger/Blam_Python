@@ -1,223 +1,223 @@
 # BLAM PYTHON!
 
 ```python
-    [DOCS]   Search [Search](http://docs.python.org/search.html)  [PyDocs](http://www.python.org/doc/)
-    [SCRIPT]  #!/usr/bin/env python     
-      import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
-      os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
-      import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
-      os.execlp("emacs", "emacs", "file.txt")
-      user_time,sys,child_user,child_sys,elapsed = os.times()
-      os.urandom(n)
-    [CONTROL] 
-      while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
-      if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
-      for ele in list: print ele   for i in range(1, 10): print i
-      { 'case1': 'val1', 'case2':'val2' }.get(switch_index, 'default_val')
-      apply( lambda x,y:x+y , (2,3) )
-      def square(x, root=false): return x*x  \\ square(x,True)
-      def proc(a, b=7, ): \\  \\ global gname \\ my (loc_name)=(1) \\ body
-      class C: \\  def method_name(self): \\  self.inst_var=5
-        def __init__(self,x): pass
-      c = C(); c.method.im_func.whoami='my name is c'
-      try: \\ body \\except IOError, msg: pass \\ except: general \\ finally: noerr
-      LAMBDA \\ global='g' \\ def foo(list): \\ lexical='loc' \\ map(lambda arg,lexical=lexical: arg+lexical+global, list)
+[DOCS]   Search [Search](http://docs.python.org/search.html)  [PyDocs](http://www.python.org/doc/)
+[SCRIPT]  #!/usr/bin/env python     
+  import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
+  os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
+  import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
+  os.execlp("emacs", "emacs", "file.txt")
+  user_time,sys,child_user,child_sys,elapsed = os.times()
+  os.urandom(n)
+[CONTROL] 
+  while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
+  if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
+  for ele in list: print ele   for i in range(1, 10): print i
+  { 'case1': 'val1', 'case2':'val2' }.get(switch_index, 'default_val')
+  apply( lambda x,y:x+y , (2,3) )
+  def square(x, root=false): return x*x  \\ square(x,True)
+  def proc(a, b=7, ): \\  \\ global gname \\ my (loc_name)=(1) \\ body
+  class C: \\  def method_name(self): \\  self.inst_var=5
+    def __init__(self,x): pass
+  c = C(); c.method.im_func.whoami='my name is c'
+  try: \\ body \\except IOError, msg: pass \\ except: general \\ finally: noerr
+  LAMBDA \\ global='g' \\ def foo(list): \\ lexical='loc' \\ map(lambda arg,lexical=lexical: arg+lexical+global, list)
 
-    [VARS/OPS] x=y=1;  x,y="parallel",'assign'   my(x)=(3);   Operator precedence:
-      lambda or and not  [in, not in]  [is, is not]  [<, <=, >, >=, <>, !=, ==]
-      | ^ &  [<<, >>]  [+, -]  [*, /, %]  [+x, -x]  ~x ** x.attr x[index]
-      x[y:z] f(arg...) (expr...) [exprs...] {key:val...} `expr...`
-      global a,b  # allows assignment to global variables
-      a if b else c
-      abs(x) int(x) long(x) float(x) complex(r,i) c.conjugate() pow(x) x**y  div,mod=divmod(x,y)
-      math.trunc(x) round(x,n) math.floor(x) math.ceil(x)
-    [ITERATOR]  .__iter__() .next()
-    [TUPLE] t=(1,2)  t[0:-1]  t[0:-1,2]   l3=l1+l2  x in tup    ==,<=,...
-      int<--  len(s) max(s) min(s)    .count(x)
-      tup<--  range(5,10)   tuple(itr) 
-    [SEQ] list(itr)  s.copy()
-    [LIST]. l=['one','two']; list(iterable);  l2=None   acopy=l3[:]   
-      <--      str=", ".join(s);    if (x in l) or (l == None): pass
-      ELE<--  .index(index, default)  .pop()  .reduce(sum,s)   
-      MODIFY: .append(ele)  s.extend(itr)   .insert(i,x)  .remove(x)  s[i]=x  s[i:j]=tuple   del s[i:j]
-      seq<--  l[0:-1]  l[0:-1,2]   [x*x for x in l if x%2==0]  
-              .reverse()  .filter(lambda x:x>1,s)  .sort([cmpfunc]) reps*lst
-    [DICT]. d={'key1':'val1','k2':22}  dict(itr)  dict(map)  dict(k=v, ...)   fromkeys(keys,vals)
-              [ k for (k,v) in tel.items() ];   for k,v in a.items(): pass
-      ele<--   d[k]  .get(k,default)
-      int<--   len(a)
-      <--      x in d   k not in d   .has_key(k)
-      MODIFY   d[k]=v   del a[k]   .pop(k,def)   .clear() .update(b)    d.setdefault(k[,x])  random_pair=d.popitem()
-      dict<--  .copy()
-      VIEW<--  .viewitems()  .veiwkeys()  .viewvalues()    VIEW OPS:  v3=v1&v2  v1|v2  v1-v2  v1^v2
-      seq<--   .keys() .items()  
-      itr<--   iter(d)  .iteritems()  .iterkeys()  .itervalues()
-    [STRING]. len("a"+"b")  str(99.99)
-      x,y,z,r = "to", 'to', `2`, r"\raw\str"       """multi-line doc string"""
-      "format Str %s %c %i %d %e %f %%  \r\n \t \xFF \u00FF" % ('aa', 'a', 7, Decimal(7) 7.1, 7.1e+00)
-      "%r %s  %-i %0i" % ('repr', 'str', left_adjusted, zero_padded,  )
-      print '{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x)
-      if ch in str: pass; if str.find('sub')!=-1:  ch==ord(chr(ch))
-      bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])   
-               .isalnum()  .isalpha() .isdigit() .islower()  .isspace()  .istitle()  .isupper() 
-      int<--   len(s)  .index(sub[,start[,end]]) .count(sub[,start[,end]])   .find(sub[,start[,end]])    .rindex   .rfind
-      str<--   s[:-2]  .format(arg1,...)
-      MODIFY   s[1:3]=="ra"  .replace(old,new[,maxsplit])  .swapcase() 
-      seq<--   .strip("stripchars") .lstrip  .rstrip .splitlines([keepends])
-      PAD      .ljust(width) .rjust(width)   .lstrip()  .center(width)  .expandtabs([tabsize])  .zfill(w)
-      CASE     .lower()  .upper()  .capitalize() .title() 
-      OTHER    .decode([enc[,err]])  .encode([enc[,err]])  .translate(table[,delchs])
-              (before,sep,after)=s.partition(sep)  .rpartition
-    [IO]
-      print "%i %f5.2 %s8 %s" % (1, 1.2, 'str', int( raw_input('prompt> ') ) ), end=''
-      sys.stdout.write('prompt> ')   sys.stdout.flush()
-      o=open('out.txt','w+');   # r=read w=write a=append b=binary +=andUpdate
-      o.write("xx"); o.writelines(lst); o.close();  
-      inp=open('in','r'); while line=inp.readline():
-      for each in o.readlines():  y=each     # iterate through the file
-      open(fname[,mode[,bufsize]])    sys.stdout.write("no carriage return")
-     tmpfile()
-     user=raw_input();  lines = sys.stdin.readlines();  
-     import os    # import the os module first
-     os.path.join(path_segment1, path_segment2, ...)
-     os.path.exists(path)
-     os.listdir(directory_path)
-     os.remove(file_path)
-     os.rmdir(directory_path)
-     file = open(path, "rw")
-     file.read()
-     string.write("string")
-    {FILE} .close() .flush() .next() .read([size]) .readline([size]) .readlines([size]) .write(s) .writestr(seq) 
-    [DIR] 
-     import os;  os.remove(f) .rename(f1,f2)  os.chdir(d)  a=os.listdir('/')
-     os.path.... .join(dir,file) .dirname(f) .basename(f)
-     os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) 
-            .isfile(f) .isdir(f) .split(f) .splitdrive(f) .splitext(f)
-     os.popen(command,mode,bufSize) os.tmpfile() os.stat(f)
-    [SYSTEM]
-     time.sleep(5)  os.spawnlp(os.P_NOWAIT, path, ARG0, arg1, ...)
-     os.exec(...) l=listargs, v=argv, e=env@end, p=searchPath, exec=do not return
-    [FUNCTIONAL]
-     args=filter(lambda x:x!='',args)
-     nums = map(float, sys.argv[1:])
-     print reduce(operator.add, nums)/len(nums)
-    [REGEXP]   re.search('([^/]*)\.mp3', fileName).group(1)
-     . ^ $ * + ? *? +? ?? {m} {m,n} {m,n}? \ [] | (...) (?...)
-     (?iLmsux) (?:...) (?P<name>...) (?P=name) (?#...) (?=...) (?!...)  (?<=...)
-     (?&lt;!...) 
-     m=re.search('(.*)\.mp3',f) m.group(1)
-     import re;  m=re.search('(?<=abc)def','abcdef');  m.group(0); --> 'def'
-     #This example looks for a word following a hyphen: 
-     m=re.search('(?<=-)\w+', 'spam-egg');  m.group(0)  -->  'egg'
-     re.compile(pat[,flgs])   .match("ba", l)  .search("ba", 1) 
-     search(str[,pos[,end]])  match(str[,pos[,end]]) split(str[,max=0]) 
-     findall(string)  finditer(string) 
-     sub(repl,str[,cnt=0])  subn(repl,str[,count=0]) 
-     flags  groupindex  pattern 
-     \A begin-str \b \B begin-word \d digit \D !digit \s space \S !space
-     \w word \W !word \Z end-str  
-     STANDARD:  \a  \b  \f  \n  \r  \t  \v  \x  \\
-    [SPECIAL]
-     __dict__  dir() __class__ __bases__  
-    [TOOLS/DEBUG/HELP]
-     compileFile(source) ? help inspect pydoc
-     .dir(x)
-     lookfor(what[, module, import_modules, ...])  Do a keyword search on docstrings.
-     Reading help
-     info([object, maxwidth, output, toplevel])  Get help information for a function, class, or module.
-     source(object[, output])  Print or write to a file the source code for a Numpy object.
+[VARS/OPS] x=y=1;  x,y="parallel",'assign'   my(x)=(3);   Operator precedence:
+  lambda or and not  [in, not in]  [is, is not]  [<, <=, >, >=, <>, !=, ==]
+  | ^ &  [<<, >>]  [+, -]  [*, /, %]  [+x, -x]  ~x ** x.attr x[index]
+  x[y:z] f(arg...) (expr...) [exprs...] {key:val...} `expr...`
+  global a,b  # allows assignment to global variables
+  a if b else c
+  abs(x) int(x) long(x) float(x) complex(r,i) c.conjugate() pow(x) x**y  div,mod=divmod(x,y)
+  math.trunc(x) round(x,n) math.floor(x) math.ceil(x)
+[ITERATOR]  .__iter__() .next()
+[TUPLE] t=(1,2)  t[0:-1]  t[0:-1,2]   l3=l1+l2  x in tup    ==,<=,...
+  int<--  len(s) max(s) min(s)    .count(x)
+  tup<--  range(5,10)   tuple(itr) 
+[SEQ] list(itr)  s.copy()
+[LIST]. l=['one','two']; list(iterable);  l2=None   acopy=l3[:]   
+  <--      str=", ".join(s);    if (x in l) or (l == None): pass
+  ELE<--  .index(index, default)  .pop()  .reduce(sum,s)   
+  MODIFY: .append(ele)  s.extend(itr)   .insert(i,x)  .remove(x)  s[i]=x  s[i:j]=tuple   del s[i:j]
+  seq<--  l[0:-1]  l[0:-1,2]   [x*x for x in l if x%2==0]  
+          .reverse()  .filter(lambda x:x>1,s)  .sort([cmpfunc]) reps*lst
+[DICT]. d={'key1':'val1','k2':22}  dict(itr)  dict(map)  dict(k=v, ...)   fromkeys(keys,vals)
+          [ k for (k,v) in tel.items() ];   for k,v in a.items(): pass
+  ele<--   d[k]  .get(k,default)
+  int<--   len(a)
+  <--      x in d   k not in d   .has_key(k)
+  MODIFY   d[k]=v   del a[k]   .pop(k,def)   .clear() .update(b)    d.setdefault(k[,x])  random_pair=d.popitem()
+  dict<--  .copy()
+  VIEW<--  .viewitems()  .veiwkeys()  .viewvalues()    VIEW OPS:  v3=v1&v2  v1|v2  v1-v2  v1^v2
+  seq<--   .keys() .items()  
+  itr<--   iter(d)  .iteritems()  .iterkeys()  .itervalues()
+[STRING]. len("a"+"b")  str(99.99)
+  x,y,z,r = "to", 'to', `2`, r"\raw\str"       """multi-line doc string"""
+  "format Str %s %c %i %d %e %f %%  \r\n \t \xFF \u00FF" % ('aa', 'a', 7, Decimal(7) 7.1, 7.1e+00)
+  "%r %s  %-i %0i" % ('repr', 'str', left_adjusted, zero_padded,  )
+  print '{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x)
+  if ch in str: pass; if str.find('sub')!=-1:  ch==ord(chr(ch))
+  bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])   
+           .isalnum()  .isalpha() .isdigit() .islower()  .isspace()  .istitle()  .isupper() 
+  int<--   len(s)  .index(sub[,start[,end]]) .count(sub[,start[,end]])   .find(sub[,start[,end]])    .rindex   .rfind
+  str<--   s[:-2]  .format(arg1,...)
+  MODIFY   s[1:3]=="ra"  .replace(old,new[,maxsplit])  .swapcase() 
+  seq<--   .strip("stripchars") .lstrip  .rstrip .splitlines([keepends])
+  PAD      .ljust(width) .rjust(width)   .lstrip()  .center(width)  .expandtabs([tabsize])  .zfill(w)
+  CASE     .lower()  .upper()  .capitalize() .title() 
+  OTHER    .decode([enc[,err]])  .encode([enc[,err]])  .translate(table[,delchs])
+          (before,sep,after)=s.partition(sep)  .rpartition
+[IO]
+  print "%i %f5.2 %s8 %s" % (1, 1.2, 'str', int( raw_input('prompt> ') ) ), end=''
+  sys.stdout.write('prompt> ')   sys.stdout.flush()
+  o=open('out.txt','w+');   # r=read w=write a=append b=binary +=andUpdate
+  o.write("xx"); o.writelines(lst); o.close();  
+  inp=open('in','r'); while line=inp.readline():
+  for each in o.readlines():  y=each     # iterate through the file
+  open(fname[,mode[,bufsize]])    sys.stdout.write("no carriage return")
+ tmpfile()
+ user=raw_input();  lines = sys.stdin.readlines();  
+ import os    # import the os module first
+ os.path.join(path_segment1, path_segment2, ...)
+ os.path.exists(path)
+ os.listdir(directory_path)
+ os.remove(file_path)
+ os.rmdir(directory_path)
+ file = open(path, "rw")
+ file.read()
+ string.write("string")
+{FILE} .close() .flush() .next() .read([size]) .readline([size]) .readlines([size]) .write(s) .writestr(seq) 
+[DIR] 
+ import os;  os.remove(f) .rename(f1,f2)  os.chdir(d)  a=os.listdir('/')
+ os.path.... .join(dir,file) .dirname(f) .basename(f)
+ os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) 
+        .isfile(f) .isdir(f) .split(f) .splitdrive(f) .splitext(f)
+ os.popen(command,mode,bufSize) os.tmpfile() os.stat(f)
+[SYSTEM]
+ time.sleep(5)  os.spawnlp(os.P_NOWAIT, path, ARG0, arg1, ...)
+ os.exec(...) l=listargs, v=argv, e=env@end, p=searchPath, exec=do not return
+[FUNCTIONAL]
+ args=filter(lambda x:x!='',args)
+ nums = map(float, sys.argv[1:])
+ print reduce(operator.add, nums)/len(nums)
+[REGEXP]   re.search('([^/]*)\.mp3', fileName).group(1)
+ . ^ $ * + ? *? +? ?? {m} {m,n} {m,n}? \ [] | (...) (?...)
+ (?iLmsux) (?:...) (?P<name>...) (?P=name) (?#...) (?=...) (?!...)  (?<=...)
+ (?&lt;!...) 
+ m=re.search('(.*)\.mp3',f) m.group(1)
+ import re;  m=re.search('(?<=abc)def','abcdef');  m.group(0); --> 'def'
+ #This example looks for a word following a hyphen: 
+ m=re.search('(?<=-)\w+', 'spam-egg');  m.group(0)  -->  'egg'
+ re.compile(pat[,flgs])   .match("ba", l)  .search("ba", 1) 
+ search(str[,pos[,end]])  match(str[,pos[,end]]) split(str[,max=0]) 
+ findall(string)  finditer(string) 
+ sub(repl,str[,cnt=0])  subn(repl,str[,count=0]) 
+ flags  groupindex  pattern 
+ \A begin-str \b \B begin-word \d digit \D !digit \s space \S !space
+ \w word \W !word \Z end-str  
+ STANDARD:  \a  \b  \f  \n  \r  \t  \v  \x  \\
+[SPECIAL]
+ __dict__  dir() __class__ __bases__  
+[TOOLS/DEBUG/HELP]
+ compileFile(source) ? help inspect pydoc
+ .dir(x)
+ lookfor(what[, module, import_modules, ...])  Do a keyword search on docstrings.
+ Reading help
+ info([object, maxwidth, output, toplevel])  Get help information for a function, class, or module.
+ source(object[, output])  Print or write to a file the source code for a Numpy object.
 
-    [MODULES] import module;  from module import class, function, variable
-     from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str) 
-     import linecache;       linecache.getline(filename, lineno) 
-     import copy;            copy.copy(x) copy.deepcopy(x)
-     import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
-     from random import *;   randrange(0,8,2) --> 0,2,4, or 6
-     from datetime import datetime;    str(datetime.fromtimestamp(time));  str(datetime.datetime.utcnow())
-     import dateutil.parser; yourdate = dateutil.parser.parse(datestring)
+[MODULES] import module;  from module import class, function, variable
+ from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str) 
+ import linecache;       linecache.getline(filename, lineno) 
+ import copy;            copy.copy(x) copy.deepcopy(x)
+ import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
+ from random import *;   randrange(0,8,2) --> 0,2,4, or 6
+ from datetime import datetime;    str(datetime.fromtimestamp(time));  str(datetime.datetime.utcnow())
+ import dateutil.parser; yourdate = dateutil.parser.parse(datestring)
 
-    [CLASS/FN]
-     def fn(*args, **kwmap):
-     class ClassName(SuperClass): 
-       classVar=1
-       @classmethod
-       def my_c_method(cls, arg1, ...): 
-           new_inst = cls()
-       ClassName.my_c_method(1)
-       def __inst__(self): \\  self.instVar=2
-       def method(self, arg1): pass
-     isinstance(Decimal(4), Decimal)
-     .__dict__  .__class  .__bases__ .__name__ .__mro__ .mro() .__subclasses__()
-
-
-    --- Work in Progress ---
+[CLASS/FN]
+ def fn(*args, **kwmap):
+ class ClassName(SuperClass): 
+   classVar=1
+   @classmethod
+   def my_c_method(cls, arg1, ...): 
+       new_inst = cls()
+   ClassName.my_c_method(1)
+   def __inst__(self): \\  self.instVar=2
+   def method(self, arg1): pass
+ isinstance(Decimal(4), Decimal)
+ .__dict__  .__class  .__bases__ .__name__ .__mro__ .mro() .__subclasses__()
 
 
-    [SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o) 
-                s|o==s.union(o) s&o==s.insersection(o) s-o==s.difference(o) s^o==s.symmetric_difference(o)
-                .update(o)  .intersection_update(o) .difference_update(o) .symmetric_difference_update(o)
-                .add(e) .remove(e) .discard(e) .pop() .clear()
-
-    [MORE FILE]   .seek(offset[,os.SEEK_CUR]) .tell()  .fileno() .isatty()      .truncate([sz])   .closed .encoding .errors .mode .name .newlines .softspace
-    [MEMORY VIEW, CONTEXT MANAGER TYPE, ]
-    [CSV]
-     import csv
-     >>> with open('eggs.csv', 'rb') as csvfile:
-     ...     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-     ...     for row in spamreader:
-     ...         print ', '.join(row)
-     import csv
-     with open('eggs.csv', 'wb') as csvfile:
-         spamwriter = csv.writer(csvfile, delimiter=' ',
-                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
-         spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
-         spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
-     #SNIFFER
-     with open('example.csv', 'rb') as csvfile:
-     dialect = csv.Sniffer().sniff(csvfile.read(1024))
-     csvfile.seek(0)
-     reader = csv.reader(csvfile, dialect)
-     # ... process CSV file contents here ...
-
-     csv.list_dialects()
+--- Work in Progress ---
 
 
+[SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o) 
+            s|o==s.union(o) s&o==s.insersection(o) s-o==s.difference(o) s^o==s.symmetric_difference(o)
+            .update(o)  .intersection_update(o) .difference_update(o) .symmetric_difference_update(o)
+            .add(e) .remove(e) .discard(e) .pop() .clear()
 
-    === PYTHON DOCUMENTATION ===
-     - Py Tutorial          http://docs.python.org/3/tutorial/modules.html
-     - Py for data science  https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience
-     - Tut for NLP words    http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb
-     - Quick Ref http://rgruet.free.fr/PQR25/PQR2.5.html  (import into blam)
-     https://zapier.com/engineering/debugging-python-boss/
+[MORE FILE]   .seek(offset[,os.SEEK_CUR]) .tell()  .fileno() .isatty()      .truncate([sz])   .closed .encoding .errors .mode .name .newlines .softspace
+[MEMORY VIEW, CONTEXT MANAGER TYPE, ]
+[CSV]
+ import csv
+ >>> with open('eggs.csv', 'rb') as csvfile:
+ ...     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+ ...     for row in spamreader:
+ ...         print ', '.join(row)
+ import csv
+ with open('eggs.csv', 'wb') as csvfile:
+     spamwriter = csv.writer(csvfile, delimiter=' ',
+                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
+     spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
+     spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+ #SNIFFER
+ with open('example.csv', 'rb') as csvfile:
+ dialect = csv.Sniffer().sniff(csvfile.read(1024))
+ csvfile.seek(0)
+ reader = csv.reader(csvfile, dialect)
+ # ... process CSV file contents here ...
+
+ csv.list_dialects()
 
 
-    [EXAMPLES]
-     - Flask  https://github.com/mitsuhiko/flask/blob/master/flask/blueprints.py
-     - ?Praw https://github.com/praw-dev/praw/blob/master/praw/helpers.py
-     - ?Pyrimid  https://github.com/Pylons/pyramid/blob/master/pyramid/authentication.py
+
+=== PYTHON DOCUMENTATION ===
+ - Py Tutorial          http://docs.python.org/3/tutorial/modules.html
+ - Py for data science  https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience
+ - Tut for NLP words    http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb
+ - Quick Ref http://rgruet.free.fr/PQR25/PQR2.5.html  (import into blam)
+ https://zapier.com/engineering/debugging-python-boss/
 
 
-    [TO LOOK AT WHEN STUDYING]
-     - http://climateecology.wordpress.com/2014/02/10/a-side-by-side-example-of-r-and-python/
-     - http://blog.scrapinghub.com/2014/03/26/optimizing-memory-usage-of-scikit-learn-models-using-succinct-tries/
-     - http://www.datasciencecentral.com/profiles/blogs/sample-data-science-project-optimizing-all-business-levers-simult
-
-    [Python usage]
-     - As Sci Stack  http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/
-     - Building ML stack on Vagrant    http://jeroenjanssens.com/2013/12/07/lean-mean-data-science-machine.html
-
-    [Python speed]
-     -  http://code-redefined.blogspot.com/2011/03/cython-made-my-python-code-go.html
+[EXAMPLES]
+ - Flask  https://github.com/mitsuhiko/flask/blob/master/flask/blueprints.py
+ - ?Praw https://github.com/praw-dev/praw/blob/master/praw/helpers.py
+ - ?Pyrimid  https://github.com/Pylons/pyramid/blob/master/pyramid/authentication.py
 
 
-    === LIB NUMPY AND FRIENDS ===
+[TO LOOK AT WHEN STUDYING]
+ - http://climateecology.wordpress.com/2014/02/10/a-side-by-side-example-of-r-and-python/
+ - http://blog.scrapinghub.com/2014/03/26/optimizing-memory-usage-of-scikit-learn-models-using-succinct-tries/
+ - http://www.datasciencecentral.com/profiles/blogs/sample-data-science-project-optimizing-all-business-levers-simult
 
-    [NUM PY]
-     import numpy as np
-     np.bool, np.float32
+[Python usage]
+ - As Sci Stack  http://www.r-bloggers.com/the-homogenization-of-scientific-computing-or-why-python-is-steadily-eating-other-languages-lunch/
+ - Building ML stack on Vagrant    http://jeroenjanssens.com/2013/12/07/lean-mean-data-science-machine.html
 
-    [IN PLACE]
-     y[:] = 2*y
+[Python speed]
+ -  http://code-redefined.blogspot.com/2011/03/cython-made-my-python-code-go.html
+
+
+=== LIB NUMPY AND FRIENDS ===
+
+[NUM PY]
+ import numpy as np
+ np.bool, np.float32
+
+[IN PLACE]
+ y[:] = 2*y
 ```
 
 
