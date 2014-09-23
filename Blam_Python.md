@@ -5,14 +5,14 @@
 
 ```python
 [DOCS]   Search [Search](http://docs.python.org/search.html)  [PyDocs](http://www.python.org/doc/)
-[SCRIPT]  #!/usr/bin/env python     
+[SCRIPT]  #!/usr/bin/env python
   import os; os.getcwd()  os.getenv('PATH') os.putenv(k,v) os.environ
   os.chdir(os.path.dirname(sys.argv[0])) os.getcwd()
   import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
-  os.execlp("emacs", "emacs", "file.txt")
+  os.system("ls -al");  os.execlp("emacs", "emacs", "file.txt")
   user_time,sys,child_user,child_sys,elapsed = os.times()
   os.urandom(n)   raw_input()   time.sleep(5)  sys.stdout.write('.')   msvcrt.getch()
-[CONTROL] x=y=1;  x,y="parallel",'assign' 
+[CONTROL] x=y=1;  x,y="parallel",'assign'
   while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
   if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
   for ele in list: print ele   for i in range(1, 10): print i
@@ -37,14 +37,14 @@
 [ITERATOR]  .__iter__() .next()
 [TUPLE] t=(1,2)  t[0:-1]  t[0:-1,2]   l3=l1+l2  x in tup    ==,<=,...
   int<--  len(s) max(s) min(s)    .count(x)
-  tup<--  range(5,10)   tuple(itr) 
+  tup<--  range(5,10)   tuple(itr)
 [SEQ] list(itr)  s.copy()
 [LIST]. l=['one','two']; l2=None   acopy=l3[:]   list(iterable); #<--bestway
            type(x)==list or tuple    isinstance(a, collections.Iterable)
   <--      str=", ".join(s);    if (x in l) or (l == None): pass
-  ELE<--  .index(index, default)  .pop()  .reduce(sum,s)   
+  ELE<--  .index(index, default)  .pop()  .reduce(sum,s)
   MODIFY: .append(ele)  s.extend(itr)   .insert(i,x)  .remove(x)  s[i]=x  s[i:j]=tuple   del s[i:j]
-  seq<--  l[0:-1]  l[0:-1,2]   [x*x for x in l if x%2==0]  
+  seq<--  l[0:-1]  l[0:-1,2]   [x*x for x in l if x%2==0]
           .reverse()  .filter(lambda x:x>1,s)  .sort([cmpfunc]) reps*lst
 [DICT]. d={'key1':'val1','k2':22}  dict(itr)  dict(map)  dict(k=v, ...)   fromkeys(keys,vals)
    isinstance({},collections.Mapping)  .has_attr('__setitem__')
@@ -56,7 +56,7 @@
   MODIFY   d[k]=v   del a[k]   .pop(k,def)   .clear() .update(b)    d.setdefault(k[,x])  random_pair=d.popitem()
   dict<--  .copy()
   VIEW<--  .viewitems()  .veiwkeys()  .viewvalues()    VIEW OPS:  v3=v1&v2  v1|v2  v1-v2  v1^v2
-  seq<--   .keys() .items()  
+  seq<--   .keys() .items()
   itr<--   .iter(d)  .iteritems()  .iterkeys()  .itervalues()
 [STRING]. len("a"+"b")  str(99.99)  s[1:3]=="ra"  s[:-1]
   x,y,z,r = "to", 'to', `2`, r"\raw\str"       """multi-line doc string"""
@@ -64,26 +64,26 @@
   "%r %s  %-i %02i" % ('repr', 'str', left_adjusted, zero_padded,  )
   print '{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x)
   if ch in str: pass; if str.find('sub')!=-1:  ch==ord(chr(ch))
-  bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])   
-           .isalnum()  .isalpha() .isdigit() .islower()  .isspace()  .istitle()  .isupper() 
+  bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])
+           .isalnum()  .isalpha() .isdigit() .islower()  .isspace()  .istitle()  .isupper()
   int<--   len(s)  .index(sub[,start[,end]]) .count(sub[,start[,end]])   .find(sub[,start[,end]])    .rindex   .rfind
   str<--   s[:-2]  .format(arg1,...)
-  MODIFY   s[1:3]=="ra"  .replace(old,new[,maxsplit])  .swapcase() 
+  MODIFY   s[1:3]=="ra"  .replace(old,new[,maxsplit])  .swapcase()
   seq<--   .strip("stripchars") .lstrip  .rstrip .splitlines([keepends])
   PAD      .ljust(width) .rjust(width)   .lstrip()  .center(width)  .expandtabs([tabsize])  .zfill(w)
-  CASE     .lower()  .upper()  .capitalize() .title() 
+  CASE     .lower()  .upper()  .capitalize() .title()
   OTHER    .decode([enc[,err]])  .encode([enc[,err]])  .translate(table[,delchs])
           (before,sep,after)=s.partition(sep)  .rpartition
 [IO]
   print "%i %f5.2 %s8 %s" % (1, 1.2, 'str', int( raw_input('prompt> ') ) ), end=''
   sys.stdout.write('prompt> ')   sys.stdout.flush()
   o=open('out.txt','w+');   # r=read w=write a=append b=binary +=andUpdate
-  o.write("xx"); o.writelines(lst); o.close();  
+  o.write("xx"); o.writelines(lst); o.close();
   inp=open('in','r'); while line=inp.readline():
   for each in o.readlines():  y=each     # iterate through the file
   open(fname[,mode[,bufsize]])    sys.stdout.write("no carriage return")
   tmpfile()
-  user=raw_input();  lines = sys.stdin.readlines();  
+  user=raw_input();  lines = sys.stdin.readlines();
   import os    # import the os module first
   os.path.join(path_segment1, path_segment2, ...)
   os.path.exists(path)
@@ -94,13 +94,13 @@
   file.read()
   string.write("string")
   with open('somefile.txt', 'a') as the_file: \\ the_file.write('yo')
-  {FILE} .close() .flush() .next() .read([size]) .readline([size]) .readlines([size]) .write(s) .writestr(seq) 
-[DIR] 
+  {FILE} .close() .flush() .next() .read([size]) .readline([size]) .readlines([size]) .write(s) .writestr(seq)
+[DIR]
  import os;  os.chdir(d)  a=os.listdir('/')
- FILENAME    os.path.... .join(dir,file) .dirname(f) .basename(f) 
+ FILENAME    os.path.... .join(dir,file) .dirname(f) .basename(f)
                .split(f) .splitdrive(f) .splitext(f)
- PROPERTIES  os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) .isfile(f) .isdir(f) 
- MODIFY      os.remove(f) .rename(f1,f2)           
+ PROPERTIES  os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) .isfile(f) .isdir(f)
+ MODIFY      os.remove(f) .rename(f1,f2)
  os.popen(command,mode,bufSize) os.tmpfile() os.stat(f)
 [SYSTEM]
  time.sleep(5)  os.spawnlp(os.P_NOWAIT, path, ARG0, arg1, ...)
@@ -112,21 +112,21 @@
 [REGEXP]   re.search('([^/]*)\.mp3', fileName).group(1)
  . ^ $ * + ? *? +? ?? {m} {m,n} {m,n}? \ [] | (...) (?...)
  (?iLmsux) (?:...) (?P<name>...) (?P=name) (?#...) (?=...) (?!...)  (?<=...)
- (?&lt;!...) 
+ (?&lt;!...)
  m=re.search('(.*)\.mp3',f) m.group(1)
  import re;  m=re.search('(?<=abc)def','abcdef');  m.group(0); --> 'def'
- #This example looks for a word following a hyphen: 
+ #This example looks for a word following a hyphen:
  m=re.search('(?<=-)\w+', 'spam-egg');  m.group(0)  -->  'egg'
- re.compile(pat[,flgs])   .match("ba", l)  .search("ba", 1) 
- search(str[,pos[,end]])  match(str[,pos[,end]]) split(str[,max=0]) 
- findall(string)  finditer(string) 
- sub(repl,str[,cnt=0])  subn(repl,str[,count=0]) 
- flags  groupindex  pattern 
+ re.compile(pat[,flgs])   .match("ba", l)  .search("ba", 1)
+ search(str[,pos[,end]])  match(str[,pos[,end]]) split(str[,max=0])
+ findall(string)  finditer(string)
+ sub(repl,str[,cnt=0])  subn(repl,str[,count=0])
+ flags  groupindex  pattern
  \A begin-str \b \B begin-word \d digit \D !digit \s space \S !space
- \w word \W !word \Z end-str  
+ \w word \W !word \Z end-str
  STANDARD:  \a  \b  \f  \n  \r  \t  \v  \x  \\
 [SPECIAL]
- __dict__  dir() __class__ __bases__  
+ __dict__  dir() __class__ __bases__
 [TOOLS/DEBUG/HELP]
  compileFile(source) ? help inspect pydoc
  .dir(x)
@@ -136,22 +136,22 @@
  source(object[, output])  Print or write to a file the source code for a Numpy object.
 
 [MODULES] import module;  from module import class, function, variable
- from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str) 
- import linecache;       linecache.getline(filename, lineno) 
+ from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str)
+ import linecache;       linecache.getline(filename, lineno)
  import copy;            copy.copy(x) copy.deepcopy(x)
  import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
  from random import *;   randrange(0,8,2) --> 0,2,4, or 6
 
- import json; json.dump(x,out, indent=4, sort_keys=True) 
+ import json; json.dump(x,out, indent=4, sort_keys=True)
 
 
 [CLASS/FN]
  def fn(*args, **kwmap):
- class ClassName(SuperClass): 
+ class ClassName(SuperClass):
    classVar=1
    @classmethod
-   def my_c_method(cls, arg1, ...): 
-       my(x)=(3);   
+   def my_c_method(cls, arg1, ...):
+       my(x)=(3);
        new_inst = cls()
    ClassName.my_c_method(1)
    def __init__(self): \\  self.instVar=2
@@ -165,22 +165,22 @@
 
 
  [TIME]
- import dateutil.parser;    from datetime import datetime as dt;    
-     t='2014-05-02 07:30:04.891926'=str(dt.utcnow())  
+ import dateutil.parser;    from datetime import datetime as dt;
+     t='2014-05-02 07:30:04.891926'=str(dt.utcnow())
      date = dateutil.parser.parse(t)
      sec = (dt.utcnow() - dt.now()).total_seconds()
-  import time; epoch = int(time.time());  
+  import time; epoch = int(time.time());
      datetime.fromtimestamp(time.time())   # timestamp is a float
      time.mktime(dt.now().timetuple())
      dt.strftime("%Y %y.%m.%d  %a%A%w  %H:%M %I%p")
 
-  
+
 
 
 --- Work in Progress ---
 
 
-[SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o) 
+[SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o)
             s|o==s.union(o) s&o==s.insersection(o) s-o==s.difference(o) s^o==s.symmetric_difference(o)
             .update(o)  .intersection_update(o) .difference_update(o) .symmetric_difference_update(o)
             .add(e) .remove(e) .discard(e) .pop() .clear()
@@ -217,7 +217,7 @@
  np.bool, np.float32
 
 [ARRAY]
-parts     .size  .dtype  .shape  
+parts     .size  .dtype  .shape
 <---      .flat .tolist .tostring .tofile
 new       .array([(1.0, 2), (3.0, 4)], dtype=[('x', float), ('y', object)])
 new       arange(100)  zeros(4,4) ones(4,4)  linspace(start,end,num)
@@ -230,11 +230,11 @@ modify    reshape(5,5,2)
 [IN PLACE]
  y[:] = 2*y
 
-histogram(vals, bins)  
+histogram(vals, bins)
 
 [IO]
 np.genfromtxt(StringIO("1, 2, 3\n4, 5, 6"), delimiter="," =3, autostrip=True
-    comment='#', skip_header=3, skip_footer=5, dtype="i4,f8,|S3", 
+    comment='#', skip_header=3, skip_footer=5, dtype="i4,f8,|S3",
     names="A, B, C"
 
 pylab.plot(x, y)
@@ -254,8 +254,8 @@ plot(m[:,0],m[:,1], 'or'); show()  - -- : -. . o ^  r g b c m y b w
 === SCRIPTING RECIPIES ===
 
 [FILE]
-  import os;  
-  source_py_file_loc = os.path.dirname(os.path.abspath(__file__)) 
+  import os;
+  source_py_file_loc = os.path.dirname(os.path.abspath(__file__))
 
 ```
 
@@ -268,7 +268,7 @@ plot(m[:,0],m[:,1], 'or'); show()  - -- : -. . o ^  r g b c m y b w
 - uninstalled matplotlib and numpy
     STACK  http://stackoverflow.com/questions/20252361/problems-with-pyplot
     PKG now in lang/python  superpack 10.8
-  - installed from Scipy superpack manually using easy_install 
+  - installed from Scipy superpack manually using easy_install
     (numpy did not complete successfully, but did install)
 
 
@@ -1041,7 +1041,7 @@ In [2]: %timeit for x in range(100): f(x)
 
     ? help inspect pydoc
 
-    __dict__  dir() __class__ __bases__  
+    __dict__  dir() __class__ __bases__
 
     None
 
@@ -1049,15 +1049,15 @@ In [2]: %timeit for x in range(100): f(x)
 
 
 
-    tmpfile()  execl(path, arg0, arg1, ...) 
+    tmpfile()  execl(path, arg0, arg1, ...)
 
         from random import Random
         g = Random(firstseed)
         result = [g]
 
-    randrange([start,] stop[, step]) 
+    randrange([start,] stop[, step])
 
-    compileFile(source) 
+    compileFile(source)
     os.path.join(dir, file)
 
     import sys, operator
