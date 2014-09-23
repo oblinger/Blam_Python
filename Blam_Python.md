@@ -1,3 +1,6 @@
+
+
+
 # BLAM PYTHON!
 
 ```python
@@ -8,7 +11,7 @@
   import getopt; opts,rest=getopt.getopt(sys.argv[1:],'abc:d:')
   os.execlp("emacs", "emacs", "file.txt")
   user_time,sys,child_user,child_sys,elapsed = os.times()
-  os.urandom(n)
+  os.urandom(n)   raw_input()   time.sleep(5)  sys.stdout.write('.')   msvcrt.getch()
 [CONTROL] x=y=1;  x,y="parallel",'assign' 
   while not x!=None:  break; continue; yo=1;   \     <--- single backslash will continue on next line
   if True and not x==None: y=1; z='two'  \\ elif x==2: pass \\ else: pass
@@ -36,14 +39,17 @@
   int<--  len(s) max(s) min(s)    .count(x)
   tup<--  range(5,10)   tuple(itr) 
 [SEQ] list(itr)  s.copy()
-[LIST]. l=['one','two']; list(iterable);  l2=None   acopy=l3[:]   
+[LIST]. l=['one','two']; l2=None   acopy=l3[:]   list(iterable); #<--bestway
+           type(x)==list or tuple    isinstance(a, collections.Iterable)
   <--      str=", ".join(s);    if (x in l) or (l == None): pass
   ELE<--  .index(index, default)  .pop()  .reduce(sum,s)   
   MODIFY: .append(ele)  s.extend(itr)   .insert(i,x)  .remove(x)  s[i]=x  s[i:j]=tuple   del s[i:j]
   seq<--  l[0:-1]  l[0:-1,2]   [x*x for x in l if x%2==0]  
           .reverse()  .filter(lambda x:x>1,s)  .sort([cmpfunc]) reps*lst
 [DICT]. d={'key1':'val1','k2':22}  dict(itr)  dict(map)  dict(k=v, ...)   fromkeys(keys,vals)
+   isinstance({},collections.Mapping)  .has_attr('__setitem__')
           [ k for (k,v) in tel.items() ];   for k,v in a.items(): pass
+          {key: value for (key, value) in iterable}
   ele<--   d[k]  .get(k,default)
   int<--   len(a)
   <--      x in d   k not in d   .has_key(k)
@@ -51,11 +57,11 @@
   dict<--  .copy()
   VIEW<--  .viewitems()  .veiwkeys()  .viewvalues()    VIEW OPS:  v3=v1&v2  v1|v2  v1-v2  v1^v2
   seq<--   .keys() .items()  
-  itr<--   iter(d)  .iteritems()  .iterkeys()  .itervalues()
-[STRING]. len("a"+"b")  str(99.99)
+  itr<--   .iter(d)  .iteritems()  .iterkeys()  .itervalues()
+[STRING]. len("a"+"b")  str(99.99)  s[1:3]=="ra"  s[:-1]
   x,y,z,r = "to", 'to', `2`, r"\raw\str"       """multi-line doc string"""
   "format Str %s %c %i %d %e %f %%  \r\n \t \xFF \u00FF" % ('aa', 'a', 7, Decimal(7) 7.1, 7.1e+00)
-  "%r %s  %-i %0i" % ('repr', 'str', left_adjusted, zero_padded,  )
+  "%r %s  %-i %02i" % ('repr', 'str', left_adjusted, zero_padded,  )
   print '{0:2d} {1:3d} {2:4d}'.format(x, x*x, x*x*x)
   if ch in str: pass; if str.find('sub')!=-1:  ch==ord(chr(ch))
   bool<--  .endswith(suffix[,start[,end]])  .startswith(prefix[,start[,end]])   
@@ -76,23 +82,25 @@
   inp=open('in','r'); while line=inp.readline():
   for each in o.readlines():  y=each     # iterate through the file
   open(fname[,mode[,bufsize]])    sys.stdout.write("no carriage return")
- tmpfile()
- user=raw_input();  lines = sys.stdin.readlines();  
- import os    # import the os module first
- os.path.join(path_segment1, path_segment2, ...)
- os.path.exists(path)
- os.listdir(directory_path)
- os.remove(file_path)
- os.rmdir(directory_path)
- file = open(path, "rw")
- file.read()
- string.write("string")
-{FILE} .close() .flush() .next() .read([size]) .readline([size]) .readlines([size]) .write(s) .writestr(seq) 
+  tmpfile()
+  user=raw_input();  lines = sys.stdin.readlines();  
+  import os    # import the os module first
+  os.path.join(path_segment1, path_segment2, ...)
+  os.path.exists(path)
+  os.listdir(directory_path)
+  os.remove(file_path)
+  os.rmdir(directory_path)
+  file = open(path, "rw")
+  file.read()
+  string.write("string")
+  with open('somefile.txt', 'a') as the_file: \\ the_file.write('yo')
+  {FILE} .close() .flush() .next() .read([size]) .readline([size]) .readlines([size]) .write(s) .writestr(seq) 
 [DIR] 
- import os;  os.remove(f) .rename(f1,f2)  os.chdir(d)  a=os.listdir('/')
- os.path.... .join(dir,file) .dirname(f) .basename(f)
- os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) 
-        .isfile(f) .isdir(f) .split(f) .splitdrive(f) .splitext(f)
+ import os;  os.chdir(d)  a=os.listdir('/')
+ FILENAME    os.path.... .join(dir,file) .dirname(f) .basename(f) 
+               .split(f) .splitdrive(f) .splitext(f)
+ PROPERTIES  os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) .isfile(f) .isdir(f) 
+ MODIFY      os.remove(f) .rename(f1,f2)           
  os.popen(command,mode,bufSize) os.tmpfile() os.stat(f)
 [SYSTEM]
  time.sleep(5)  os.spawnlp(os.P_NOWAIT, path, ARG0, arg1, ...)
@@ -133,8 +141,9 @@
  import copy;            copy.copy(x) copy.deepcopy(x)
  import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
  from random import *;   randrange(0,8,2) --> 0,2,4, or 6
- from datetime import datetime;    str(datetime.fromtimestamp(time));  str(datetime.datetime.utcnow())
- import dateutil.parser; yourdate = dateutil.parser.parse(datestring)
+
+ import json; json.dump(x,out, indent=4, sort_keys=True) 
+
 
 [CLASS/FN]
  def fn(*args, **kwmap):
@@ -145,10 +154,27 @@
        my(x)=(3);   
        new_inst = cls()
    ClassName.my_c_method(1)
-   def __inst__(self): \\  self.instVar=2
+   def __init__(self): \\  self.instVar=2
    def method(self, arg1): pass
  isinstance(Decimal(4), Decimal)
  .__dict__  .__class  .__bases__ .__name__ .__mro__ .mro() .__subclasses__()
+
+
+ =============================================
+ SPECIAL TOPICS
+
+
+ [TIME]
+ import dateutil.parser;    from datetime import datetime as dt;    
+     t='2014-05-02 07:30:04.891926'=str(dt.utcnow())  
+     date = dateutil.parser.parse(t)
+     sec = (dt.utcnow() - dt.now()).total_seconds()
+  import time; epoch = int(time.time());  
+     datetime.fromtimestamp(time.time())   # timestamp is a float
+     time.mktime(dt.now().timetuple())
+     dt.strftime("%Y %y.%m.%d  %a%A%w  %H:%M %I%p")
+
+  
 
 
 --- Work in Progress ---
@@ -184,12 +210,90 @@
 
 
 
-=== PYTHON DOCUMENTATION ===
- - Py Tutorial          http://docs.python.org/3/tutorial/modules.html
- - Py for data science  https://www.kaggle.com/wiki/GettingStartedWithPythonForDataScience
- - Tut for NLP words    http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb
- - Quick Ref http://rgruet.free.fr/PQR25/PQR2.5.html  (import into blam)
- https://zapier.com/engineering/debugging-python-boss/
+=== LIB NUMPY AND FRIENDS ===
+
+[NUM PY]
+ import numpy as np
+ np.bool, np.float32
+
+[ARRAY]
+parts     .size  .dtype  .shape  
+<---      .flat .tolist .tostring .tofile
+new       .array([(1.0, 2), (3.0, 4)], dtype=[('x', float), ('y', object)])
+new       arange(100)  zeros(4,4) ones(4,4)  linspace(start,end,num)
+rnd       random.random((2,3))
+combine   vstack()  hstack()
+a<--a     fromfunction(f, arr)
+
+modify    reshape(5,5,2)
+
+[IN PLACE]
+ y[:] = 2*y
+
+histogram(vals, bins)  
+
+[IO]
+np.genfromtxt(StringIO("1, 2, 3\n4, 5, 6"), delimiter="," =3, autostrip=True
+    comment='#', skip_header=3, skip_footer=5, dtype="i4,f8,|S3", 
+    names="A, B, C"
+
+pylab.plot(x, y)
+pylab.xlim(5, 15)
+pylab.ylim(-1.2, 1.2)
+pylab.xlabel('this is x!')
+pylab.ylabel('this is y!')
+pylab.title('My First Plot')
+
+pylab.xlabel('this is x!')
+pylab.ylabel('this is y!')
+pylab.title('My First Plot')
+
+plot(m[:,0],m[:,1], 'or'); show()  - -- : -. . o ^  r g b c m y b w
+
+
+=== SCRIPTING RECIPIES ===
+
+[FILE]
+  import os;  
+  source_py_file_loc = os.path.dirname(os.path.abspath(__file__)) 
+
+```
+
+
+=== INSTALLATION ===
+- Installed Scipy superpack
+  - I think script used is in /proj/lang/python/scipysuperpack
+  - sklearn fails cause numpy need recompile
+  - matplotlib fails
+- uninstalled matplotlib and numpy
+    STACK  http://stackoverflow.com/questions/20252361/problems-with-pyplot
+    PKG now in lang/python  superpack 10.8
+  - installed from Scipy superpack manually using easy_install 
+    (numpy did not complete successfully, but did install)
+
+
+
+=== TOOLS AND STUFF ===
+[PYCHARM]
+Tools->PythonConsole
+
+[VirtualEnv] -- Isolated Virtual Env
+  - http://docs.python-guide.org/en/latest/dev/virtualenvs/
+  -- Virtualenvwrapper
+  -- Virtualenv Burrito  (one key installer for both VirtualEnv + Wrapper)
+
+
+[iPython]
+
+In [2]: %timeit for x in range(100): f(x)
+100000 loops, best of 3: 20.3 us per loop
+
+
+
+=== PYTHON DOCUMENTATION ======
+- Py Tutorial           http://docs.python.org/3/tutorial/modules.html
+- Quick Ref http://rgruet.free.fr/PQR25/PQR2.5.html  (import into blam)
+    https://zapier.com/engineering/debugging-python-boss/
 
 
 [EXAMPLES]
@@ -211,15 +315,8 @@
  -  http://code-redefined.blogspot.com/2011/03/cython-made-my-python-code-go.html
 
 
-=== LIB NUMPY AND FRIENDS ===
 
-[NUM PY]
- import numpy as np
- np.bool, np.float32
 
-[IN PLACE]
- y[:] = 2*y
-```
 
 
 -----------------
