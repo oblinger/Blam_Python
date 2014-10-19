@@ -1,6 +1,5 @@
 deepcopy = lambda x: cPickle.loads(cPickle.dumps(x))
 
-
 # BLAM PYTHON!
 
 ```python
