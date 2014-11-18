@@ -44,7 +44,7 @@ deepcopy = lambda x: cPickle.loads(cPickle.dumps(x))
            type(x)==list or tuple    isinstance(a, collections.Iterable)
   <--      str=", ".join(s);    if (x in l) or (l == None): pass
   ELE<--  .index(index, default)  .pop()  .reduce(sum,s)
-  MODIFY: .append(ele)  s.extend(itr)   .insert(i,x)  .remove(x)  s[i]=x  s[i:j]=tuple   del s[i:j]
+  MODIFY: .append(ele_push)  s.extend(itr)   .insert(i,x)  .remove(x)  s[i]=x  s[i:j]=tuple   del s[i:j]
   seq<--  l[0:-1]  l[0:-1,2]   [x*x for x in l if x%2==0]
           .reverse()  .filter(lambda x:x>1,s)  .sort([cmpfunc]) reps*lst
 [DICT]. d={'key1':'val1','k2':22}  dict(itr)  dict(map)  dict(k=v, ...)   fromkeys(keys,vals)
