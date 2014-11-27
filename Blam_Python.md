@@ -1,4 +1,3 @@
-deepcopy = lambda x: cPickle.loads(cPickle.dumps(x))
 
 
 
@@ -138,7 +137,8 @@ deepcopy = lambda x: cPickle.loads(cPickle.dumps(x))
 
 [MODULES] import module;  from module import class, function, variable
  from pickle import *;   dump(obj,file);  load(file);  dumps(obj);  loads(str)
- import linecache;       linecache.getline(filename, lineno)
+         deepcopy = lambda x: cPickle.loads(cPickle.dumps(x))
+import linecache;       linecache.getline(filename, lineno)
  import copy;            copy.copy(x) copy.deepcopy(x)
  import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
  from random import *;   randrange(0,8,2) --> 0,2,4, or 6
@@ -177,11 +177,10 @@ deepcopy = lambda x: cPickle.loads(cPickle.dumps(x))
 
 
 
-
 --- Work in Progress ---
 
 
-[SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o==s.issubset(o) s>o==s.issuperset(o)
+[SET]       set(itr)  frozenset(itr)   .isdisjoint(other)  s<o == s.issubset(o) s>o == s.issuperset(o)
             s|o==s.union(o) s&o==s.insersection(o) s-o==s.difference(o) s^o==s.symmetric_difference(o)
             .update(o)  .intersection_update(o) .difference_update(o) .symmetric_difference_update(o)
             .add(e) .remove(e) .discard(e) .pop() .clear()
