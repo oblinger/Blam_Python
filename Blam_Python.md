@@ -1,8 +1,8 @@
 
+os.makedir os.makedirs
 
 
 # BLAM PYTHON!
-
 ```python
 [DOCS]   Search [Search](http://docs.python.org/search.html)  [PyDocs](http://www.python.org/doc/)
 [SCRIPT]  #!/usr/bin/env python
@@ -74,6 +74,7 @@
   CASE     .lower()  .upper()  .capitalize() .title()
   OTHER    .decode([enc[,err]])  .encode([enc[,err]])  .translate(table[,delchs])
           (before,sep,after)=s.partition(sep)  .rpartition
+          .rstrip() #is like chomp()
 [IO]
   print "%i %f5.2 %s8 %s" % (1, 1.2, 'str', int( raw_input('prompt> ') ) ), end=''
   sys.stdout.write('prompt> ')   sys.stdout.flush()
@@ -88,8 +89,6 @@
   os.path.join(path_segment1, path_segment2, ...)
   os.path.exists(path)
   os.listdir(directory_path)
-  os.remove(file_path)
-  os.rmdir(directory_path)
   file = open(path, "rw")
   file.read()
   string.write("string")
@@ -101,6 +100,8 @@
                .split(f) .splitdrive(f) .splitext(f)
  PROPERTIES  os.path.exists(f) .getsize(f) .getatime(f) .getmtime(f) .isfile(f) .isdir(f)
  MODIFY      os.remove(f) .rename(f1,f2)
+  os.remove(file_path)
+  os.rmdir(directory_path)  os.mkdir(path)???
  os.popen(command,mode,bufSize) os.tmpfile() os.stat(f)
 [SYSTEM]
  time.sleep(5)  os.spawnlp(os.P_NOWAIT, path, ARG0, arg1, ...)
