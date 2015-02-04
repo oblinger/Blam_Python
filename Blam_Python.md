@@ -144,7 +144,7 @@ import linecache;       linecache.getline(filename, lineno)
  import pprint;          pp=pprint.PrettyPrinter(indent=2)  pp.pprint(x)
  from random import *;   randrange(0,8,2) --> 0,2,4, or 6
 
- import json; json.dump(x,out, indent=4, sort_keys=True)
+ import json; json.dump(x,out, indent=4, sort_keys=True) .load(in)  .loads(str)  .dumps(obj)
 
 
 [CLASS/FN]
