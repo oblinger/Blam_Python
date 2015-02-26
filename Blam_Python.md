@@ -1,7 +1,5 @@
 
-
 os.makedir os.makedirs
-
 
 # BLAM PYTHON!
 ```python
