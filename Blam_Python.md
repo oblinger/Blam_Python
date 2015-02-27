@@ -1,4 +1,24 @@
 
+from __future__ import print_function
+import logging
+logging.basicConfig(level=logging.INFO, format='%(message)s')
+logger = logging.getLogger()
+logger.addHandler(logging.FileHandler('stdout.txt', 'a'))
+print = logger.info
+print('yo!')
+
+---
+
+def osa_fn(*lines):
+    """Executes multi-line applescript script, and returns the captured output."""
+    cmd = ['/usr/bin/osascript']
+    for l in lines:        cmd.append('-e'); cmd.append(l)
+    p = subprocess.Popen(cmd, bufsize=0, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+    stdout,stderr = p.communicate()
+    return stdout.rstrip()
+
+
+
 os.makedir os.makedirs
 
 # BLAM PYTHON!
